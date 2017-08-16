@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Paw For You - Add New Pet</title>
+
+  <!-- CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet prefetch" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
+  <link href="../css/modern-business.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+
+  <!--Images for sign in and log in-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <!--Images for the 4 tiles-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap JavaScript -->
+  <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+  <script src="../js/add_pet_validation.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+ 	   <a href="http://localhost/index.php"><img class="navbar-brand" src="../images/white-paw.png"></a>
+        <a class="navbar-brand" href="http://localhost/index.php" style="left">A Paw For You</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://localhost/index.php"> Home </a></li>
+          <li><a href="http://localhost/main-pages/adopt.php"> Adopt </a></li>  
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> FAQ <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="http://localhost/main-pages/catcare.php"> Kittens/Cats </a></li>
+              <li><a href="http://localhost/main-pages/dogcare.php"> Puppies/Dogs </a></li>
+            </ul>
+		  </li>
+          <li><a href="http://localhost/main-pages/account_admin.php"> Your Account </a></li>
+		  <li><a href="http://localhost/php/logout.php"> Logout </a></li>
+        </ul>       
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+ 	
+    <!-- PAGE HEADER -->
+    <div class="container"><div class="row">
+        <h1 class="page-header"> Add New Pet Form </h1>
+        <ol class="breadcrumb">
+          <li><a href="http://localhost/index.php"> Home </a></li>
+          <li><a href="http://localhost/main-pages/account_admin.php"> Your Account </a></li>
+		  <li class="active"> Add New Pet </li>
+        </ol>
+    </div></div>
+	
+   <div class="container">
+     <div class="row">
+
+       <form class="well form-horizontal" action="http://localhost/php/add_pet.php" method="post" id="contact_form">
+         <fieldset>
+
+           <!-- Form Name -->
+           <legend>Pet Information</legend>
+
+           <!-- Pet name field -->
+           <div class="form-group">
+             <label class="col-md-4 control-label">Pet Name</label>
+             <div class="col-md-4 inputGroupContainer">
+               <div class="input-group">
+                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                 <input name="pname" placeholder="Pet Name" class="form-control" type="text">
+               </div>
+             </div>
+           </div>
+
+           <!-- Pet(Cat/Dog) type -->
+           <div class="form-group">
+             <label class="col-md-4 control-label">Cat or Dog?</label>
+             <div class="col-md-4">
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="dog" value="0" /> Cat </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="dog" value="1" /> Dog </label>
+               </div>
+             </div>
+           </div>
+
+           <!-- Pet age field -->
+           <div class="form-group">
+             <label class="col-md-4 control-label">Pet Age (in months)</label>
+             <div class="col-md-4 inputGroupContainer">
+               <div class="input-group">
+                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                 <input name="age" placeholder="Pet Age" class="form-control" type="number">
+               </div>
+             </div>
+           </div>
+
+           <!-- Pet Breed -->
+           <div class="form-group">
+             <label class="col-md-4 control-label">Breed</label>
+             <div class="col-md-4">
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="breed" value="labrador" /> Dog: Labrador </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="breed" value="weinerdog" /> Dog: Weiner Dog </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="breed" value="husky" /> Dog: Husky </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="breed" value="pug" /> Dog: Pug </label>
+               </div>
+               <br>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="breed" value="siemese" /> Cat: Siemese </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="breed" value="britishshorthair" /> Cat: British Shorthair </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="breed" value="persian" /> Cat: Persian Cat </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="breed" value="mainecoon" /> Cat: Maine Coon </label>
+               </div>
+
+             </div>
+           </div>
+
+           <!-- Pet Color type -->
+           <div class="form-group">
+             <label class="col-md-4 control-label">Fur color</label>
+             <div class="col-md-4">
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="color" value="brown" /> Brown </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="color" value="black" /> Black </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="color" value="white" /> White </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="color" value="other" /> Other </label>
+               </div>
+             </div>
+           </div>
+
+           <!-- Gender -->
+           <div class="form-group">
+             <label class="col-md-4 control-label">Sex</label>
+             <div class="col-md-4">
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="sex" value="male" /> Male </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="sex" value="female" /> Female </label>
+               </div>
+             </div>
+           </div>
+
+           <!-- Size -->
+           <div class="form-group">
+             <label class="col-md-4 control-label">Size</label>
+             <div class="col-md-4">
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="size" value="small" /> Small (25 lbs/11kg or less) </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="size" value="medium" /> Medium (26-60 lbs/12-27 kg) </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="size" value="large" /> Large (61-100 lbs/28-45 kg) </label>
+               </div>
+               <div class="radio">
+                 <label>
+                   <input type="radio" name="size" value="xlarge" /> X-Large (101 lbs/46 kg or more) </label>
+               </div>
+             </div>
+           </div>  
+		   
+		   <!-- Pet Description --> 
+		     <div class="form-group">
+		       <label class="col-md-4 control-label">Pet Description</label>
+		         <div class="col-md-4 inputGroupContainer">
+		         <div class="input-group">
+		             <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+		             	<textarea class="form-control" name="description" placeholder="Description"></textarea>
+		       </div>
+		       </div>
+		     </div>  
+			 
+             <!-- Pet image -->
+             <div class="form-group">
+               <label class="col-md-4 control-label">Pet Image</label>
+               <div class="col-md-4 inputGroupContainer">
+  			   <div id="input-group">		   
+				   <input type="file" name="image"></input>		   
+  			   </div>
+               </div>
+             </div>
+			 
+           <!-- Button -->
+		   <br>
+           <div class="form-group">
+             <label class="col-md-4 control-label"></label>
+             <div class="col-md-4">
+               <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-send"></span></button>
+               <a href="http://localhost/main-pages/add_pet.html" class="btn btn-warning" role="button">Reset</a>
+               <a href="http://localhost/index.php" class="btn btn-danger" role="button">Cancel</a>
+             </div>
+           </div>
+
+         </fieldset>
+       </form>
+     </div>
+   </div>
+   <!-- /.container -->
+
+   <!-- Footer -->
+     <footer class="footer">
+   <hr>
+       <div class="container">
+         <p class="text-muted"><strong>Contact Us</strong></p>
+         <p class="text-muted"><i class="fa fa-map-pin"></i>  11200 SW 8th St, Miami, FL 33199</p>
+         <p class="text-muted"><i class="fa fa-phone"></i>  Phone: (555) 555-5555</p>
+         <p class="text-muted"><i class="fa fa-envelope"></i>  E-mail: moreinfo@pawforyou.com</p>
+           <div class=" pull-right">
+           <p>Copyright &copy; A Paw For You 2017</p>
+ 		<br>
+         </div>
+       </div>
+     </footer>
+  
+</body>
+</html>
